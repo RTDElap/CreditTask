@@ -1,6 +1,7 @@
 
 using ImageAnalyzeLibrary.Interfaces;
 using ImageAnalyzeLibrary.Metadata.Interfaces;
+using ImageAnalyzeLibrary.Types;
 using MetadataExtractor;
 
 namespace ImageAnalyzeLibrary.Metadata;
@@ -9,13 +10,10 @@ public class MetadataAnalyzeStrategy : IAnalyzeStrategy
 {    
     private readonly IList<IMetadataAnalyzer> _metadataAnalyzers;
 
-    private MetadataAnalyzeStrategy()
+    public MetadataAnalyzeStrategy()
     {
         _metadataAnalyzers = new List<IMetadataAnalyzer>();
     }
-
-    public static MetadataAnalyzeStrategy Create() =>
-        new MetadataAnalyzeStrategy();
 
     public MetadataAnalyzeStrategy Add( IMetadataAnalyzer analyzer )
     {
@@ -49,21 +47,22 @@ public class MetadataAnalyzeStrategy : IAnalyzeStrategy
         }
     }
 
-    public bool ProcessImage(Stream image)
+    public Result ProcessImage(Stream image)
     {
         if ( ! TryGetMetadataFromImage( image, out var metadata ) )
         {
-            return false;
+            return new Result();
         }
 
         foreach ( var analyzer in _metadataAnalyzers )
         {
             if ( analyzer.ContainsForgeryMetadata( metadata ) )
             {
-                return true;
+                return new Result( nameof(MetadataAnalyzeStrategy), "имееются метаданные редакторов" )
+                    .MarkAsForgeryImage();
             }
         }
 
-        return false;
+        return new Result();
     }
 }

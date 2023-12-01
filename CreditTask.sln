@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalyzeLibrary.Metadat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditTask.Tests", "CreditTask.Tests\CreditTask.Tests.csproj", "{35428CEA-67BB-4A36-9137-50A22160FFB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalyzeLibrary.Example", "ImageAnalyzeLibrary.Example\ImageAnalyzeLibrary.Example.csproj", "{ABF8F56A-1CFB-4433-B798-202A23CE4B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF8F56A-1CFB-4433-B798-202A23CE4B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF8F56A-1CFB-4433-B798-202A23CE4B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF8F56A-1CFB-4433-B798-202A23CE4B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF8F56A-1CFB-4433-B798-202A23CE4B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E77C5550-F5AA-4F6E-B313-BBF1869501F4} = {48F7C9FF-0447-47C4-BC8F-2F40476F4556}

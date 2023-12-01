@@ -1,4 +1,6 @@
 
+using ImageAnalyzeLibrary.Types;
+
 namespace ImageAnalyzeLibrary.Interfaces;
 
 /// <summary>
@@ -11,5 +13,5 @@ public interface IAnalyzeStrategy
     /// </summary>
     /// <param name="image"></param>
     /// <returns>Изменение изображения</returns>
-    public bool ProcessImage(Stream image);
+    public Result ProcessImage( Stream image );
 }
