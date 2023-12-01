@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalyzeLibrary", "ImageAnalyzeLibrary\ImageAnalyzeLibrary.csproj", "{E77C5550-F5AA-4F6E-B313-BBF1869501F4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageAnalyzeLibrary", "ImageAnalyzeLibrary", "{48F7C9FF-0447-47C4-BC8F-2F40476F4556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalyzeLibrary.Metadata", "ImageAnalyzeLibrary.Metadata\ImageAnalyzeLibrary.Metadata.csproj", "{606670AE-5550-4B3F-BDE0-933CAA091BE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditTask.Tests", "CreditTask.Tests\CreditTask.Tests.csproj", "{35428CEA-67BB-4A36-9137-50A22160FFB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{E77C5550-F5AA-4F6E-B313-BBF1869501F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E77C5550-F5AA-4F6E-B313-BBF1869501F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E77C5550-F5AA-4F6E-B313-BBF1869501F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606670AE-5550-4B3F-BDE0-933CAA091BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606670AE-5550-4B3F-BDE0-933CAA091BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606670AE-5550-4B3F-BDE0-933CAA091BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606670AE-5550-4B3F-BDE0-933CAA091BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35428CEA-67BB-4A36-9137-50A22160FFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E77C5550-F5AA-4F6E-B313-BBF1869501F4} = {48F7C9FF-0447-47C4-BC8F-2F40476F4556}
+		{606670AE-5550-4B3F-BDE0-933CAA091BE4} = {48F7C9FF-0447-47C4-BC8F-2F40476F4556}
 	EndGlobalSection
 EndGlobal
