@@ -4,25 +4,24 @@ using ImageAnalyzeLibrary.Types;
 namespace ImageAnalyzeLibrary.Interfaces;
 
 /// <summary>
-/// Представляет собой интерфейс определения подделки изображения,
+/// Интерфейс определения фальсификацию изображения,
 /// используя цепочку алгоритмов
 /// </summary>
 public interface IImageAnalyzer
 {
     /// <summary>
-    /// Проверяет подделку изображения.
-    /// После первого положительного результата возвращает ответ,
-    /// если нет - возвращает default структуру
+    /// Проверяет фальсификацию изображения.
+    /// После первого положительного результата на фальсификацию возвращает ответ
     /// </summary>
     /// <param name="image">Изображение</param>
-    /// <returns>Позитивный или негативный результат</returns>
+    /// <returns>Результат проверки</returns>
     public Result CheckImageForgery( Stream image );
 
     /// <summary>
-    /// Проверяет подделку изображения.
+    /// Проверяет фальсификацию изображения.
     /// Применяет к изображению все алгоритмы, которые находятся в цепочке и возвращает их ответы
     /// </summary>
     /// <param name="image">Изображения</param>
-    /// <returns>Позитивные/негативные результаты алгоритмов</returns>
+    /// <returns>Результаты проверки алгоритмов</returns>
     public IEnumerable<Result> CheckImageForgeryAllStrategies( Stream image );
 }

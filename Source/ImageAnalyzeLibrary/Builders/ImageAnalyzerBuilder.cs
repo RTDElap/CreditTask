@@ -12,6 +12,10 @@ public class ImageAnalyzerBuilder : IImageAnalyzerBuilder
         _strategies = new();
     }
 
+    /// <summary>
+    /// Создает новый экземпляр билдера
+    /// </summary>
+    /// <returns></returns>
     public static ImageAnalyzerBuilder Create() =>
         new ImageAnalyzerBuilder();
 

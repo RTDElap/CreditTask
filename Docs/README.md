@@ -1,14 +1,23 @@
-# 
+# Тестовое задание
+
+## Оглавление
+
+1. [ImageAnalyzerLibrary](#imageanalyzerlibrary)
+1. [ImageAnalyzerLibrary.Metadata](#imageanalyzelibrarymetadata)
+3. [Пример использования библиотеки](#пример-использования-библиотеки)
+4. [Тестирование](#тестирование)
 
 ## [ImageAnalyzerLibrary](/Source/ImageAnalyzeLibrary/)
 
 Является основой для проекта, содержит основные типы и интерфейсы для написания логики.
 
+Описание типов:
+
     ImageAnalyzer:
-        представляет собой объект, объединяющий алгоритмы проверки изображения на фальсификацию, предоставляя метод CheckImageForgery.
+        Класс, объединяющий алгоритмы проверки изображения на фальсификацию и отвечающий за проход изображения по цепочке.
 
     IAnalyzeStrategy:
-        интерфейс общего вида работы алгоритмов, которые определяют фальсификацию
+        Интерфейс общего вида работы алгоритмов, которые определяют фальсификацию
 
 <div align="center">
 
@@ -22,8 +31,10 @@ __Диаграмма классов__
 Пример реализации __IAnalyzeStrategy__, работающий на основе проверки метаданных изображения.
 
     IMetadataAnalyzer:
-        представляет интерфейс для проверки метаданных изображения.
+        Интерфейс для проверки метаданных изображения.
 
+    PhotoshopAnalyzer:
+        Класс, который использует XMP-данные изображения для поиска специфичных значений свойств, оставляемых Photoshop'ом.
 
 <div align="center">
 
@@ -34,17 +45,19 @@ __Диаграмма классов__
 
 ## [Пример использования библиотеки](/Source/ImageAnalyzeLibrary.Example/)
 
-Создание ImageAnalyzer через Builder-интерфейс:
+Для использования необходимо создать объект, имплементирующий IImageAnalyzer и добавить в него алгоритмы проверки фальсификации.
 
-    ```csharp
-    ImageAnalyzerBuilder.Create()
-            .AddMetadataStrategy
-            (
-                cfg => cfg
-                    .AnalyzePhotoshop()
-            )
-            .Build();
-    ```
+Пример через Builder:
+
+```csharp
+ImageAnalyzerBuilder.Create()
+    .AddMetadataStrategy
+    (
+        cfg => cfg
+            .AnalyzePhotoshop()
+    )
+    .Build();
+```
 
 ## [Тестирование](/Source/CreditTask.Tests/)
 

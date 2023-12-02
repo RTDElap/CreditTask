@@ -41,24 +41,6 @@ public static class Program
         }
     }
 
-#region Парсинг аргументов
-    static bool TryParseCommandLineArgs(string[] args, out Options options)
-    {
-#region 
-#nullable disable
-        options = default;
-#endregion
-
-        var parsedResult = Parser.Default.ParseArguments<Options>( args );
-
-        if ( parsedResult.Value is null ) return false;
-
-        options = parsedResult.Value;
-
-        return true;
-    }
-#endregion
-
 #region Создание imageAnalyzer и обработка изображения
 
     static IImageAnalyzer BuildImageAnalyzer()
@@ -80,6 +62,24 @@ public static class Program
         }
     }
 
+#endregion
+
+#region Парсинг аргументов
+    static bool TryParseCommandLineArgs(string[] args, out Options options)
+    {
+#region 
+#nullable disable
+        options = default;
+#endregion
+
+        var parsedResult = Parser.Default.ParseArguments<Options>( args );
+
+        if ( parsedResult.Value is null ) return false;
+
+        options = parsedResult.Value;
+
+        return true;
+    }
 #endregion
 
 #region Вывод результата

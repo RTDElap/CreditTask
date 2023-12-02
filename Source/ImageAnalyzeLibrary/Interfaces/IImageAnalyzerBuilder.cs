@@ -7,7 +7,7 @@ namespace ImageAnalyzeLibrary.Interfaces;
 public interface IImageAnalyzerBuilder
 {
     /// <summary>
-    /// Добавляет алгоритм определения обработки изображения в цепочку,
+    /// Добавляет алгоритм определения фальсификации изображения в цепочку,
     /// соблюдая порядок добавления
     /// </summary>
     /// <param name="strategy">Алгоритм обработки</param>
