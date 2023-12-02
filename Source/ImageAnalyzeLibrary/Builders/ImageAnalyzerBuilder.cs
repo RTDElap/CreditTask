@@ -1,5 +1,4 @@
 
-
 using ImageAnalyzeLibrary.Interfaces;
 
 namespace ImageAnalyzeLibrary.Builders;

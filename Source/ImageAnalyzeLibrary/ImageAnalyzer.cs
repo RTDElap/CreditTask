@@ -3,7 +3,7 @@ using ImageAnalyzeLibrary.Types;
 
 namespace ImageAnalyzeLibrary;
 
-public class ImageAnalyzer : IImageAnalyzer
+public sealed class ImageAnalyzer : IImageAnalyzer
 {
     private readonly IEnumerable<IAnalyzeStrategy> _strategies;
 
@@ -24,7 +24,7 @@ public class ImageAnalyzer : IImageAnalyzer
             }
         }
 
-        return new Result();
+        return Result.CreateFrom<ImageAnalyzer>("Изображение прошло проверку");
     }
 
     public IEnumerable<Result> CheckImageForgeryAllStrategies(Stream image)
@@ -35,7 +35,5 @@ public class ImageAnalyzer : IImageAnalyzer
 
             yield return result;
         }
-
-        yield return new Result();
     }
 }

@@ -15,7 +15,7 @@ public class MetadataAnalyzeStrategy : IAnalyzeStrategy
         _metadataAnalyzers = new List<IMetadataAnalyzer>();
     }
 
-    public MetadataAnalyzeStrategy Add( IMetadataAnalyzer analyzer )
+    public MetadataAnalyzeStrategy AddAnalyzer( IMetadataAnalyzer analyzer )
     {
         _metadataAnalyzers.Add( analyzer );
 
@@ -51,18 +51,21 @@ public class MetadataAnalyzeStrategy : IAnalyzeStrategy
     {
         if ( ! TryGetMetadataFromImage( image, out var metadata ) )
         {
-            return new Result();
+            return Result.CreateFrom<MetadataAnalyzeStrategy>("не удалось извлечь метаданные");
         }
+
+        Result resultOfAnalyze;
 
         foreach ( var analyzer in _metadataAnalyzers )
         {
-            if ( analyzer.ContainsForgeryMetadata( metadata ) )
+            resultOfAnalyze = analyzer.ContainsForgeryMetadata( metadata );
+
+            if ( resultOfAnalyze.IsForgeryImage )
             {
-                return new Result( nameof(MetadataAnalyzeStrategy), "имееются метаданные редакторов" )
-                    .MarkAsForgeryImage();
+                return resultOfAnalyze;
             }
         }
 
-        return new Result();
+        return Result.CreateFrom<MetadataAnalyzeStrategy>("изображение не содержит метаданные редакторов");
     }
 }

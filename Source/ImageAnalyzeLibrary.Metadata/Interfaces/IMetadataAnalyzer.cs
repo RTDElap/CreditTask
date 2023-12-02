@@ -1,4 +1,5 @@
 
+using ImageAnalyzeLibrary.Types;
 using MetadataExtractor;
 
 namespace ImageAnalyzeLibrary.Metadata.Interfaces;
@@ -14,5 +15,5 @@ public interface IMetadataAnalyzer
     /// </summary>
     /// <param name="directories">Метаданные изображения</param>
     /// <returns>Флаг, указывающий на наличие метаданных</returns>
-    public bool ContainsForgeryMetadata( IReadOnlyList<MetadataExtractor.Directory> directories );
+    public Result ContainsForgeryMetadata( IReadOnlyList<MetadataExtractor.Directory> directories );
 }
