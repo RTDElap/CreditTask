@@ -50,6 +50,10 @@ __Диаграмма классов__
 Пример через Builder:
 
 ```csharp
+using ImageAnalyzeLibrary.Builders;
+using ImageAnalyzeLibrary.Interfaces;
+using ImageAnalyzeLibrary.Metadata;
+
 ImageAnalyzerBuilder.Create()
     .AddMetadataStrategy
     (
