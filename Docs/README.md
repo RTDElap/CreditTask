@@ -88,7 +88,7 @@ ImageAnalyzerBuilder.Create()
 4. Указать путь к ассетам через переменную окружения
 
     ```console
-    $env:ASSETS_PATH="../Assets"
+    $env:ASSETS_PATH="*полный путь к ассетам*"
     ```
 
 5. Запустить тесты
